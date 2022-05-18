@@ -33,26 +33,26 @@ h2{
 
 .sass-title{
   @extend h2;
-  color: darken($color-sass,25%);
+  color: darken($color-sass,30%);
 }
 
 .bootstrap-title{
   @extend h2;
-  color: darken($color-bootstrap,25%);
+  color: darken($color-bootstrap,30%);
 }
 
 .grunt-title{
   @extend h2;
-  color: darken($color-grunt,25%);
+  color: darken($color-grunt,30%);
 }
 
 .docker-title{
   @extend h2;
-  color: darken($color-docker,25%);
+  color: darken($color-docker,30%);
 }
 
 .gulp-title{
   @extend h2;
-  color: darken($color-gulp,25%);
+  color: darken($color-gulp,30%);
 }
 

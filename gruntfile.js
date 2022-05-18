@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: './src/scss/*.scss',
-                tasks: ['sass', 'cssmin'],
+                tasks: ['sass', 'cssmin', 'postcss'],
                 options: {
                     livereload: true,
                 },
@@ -62,6 +62,17 @@ module.exports = function (grunt) {
                 }
             },
         },
+        postcss: {
+            options: {
+                map: true, // inline sourcemaps
+                processors: [
+                    require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                ]
+            },
+            dist: {
+                src: 'public/css/style.css'
+            }
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -69,5 +80,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    grunt.registerTask('default', ['sass', 'concat', 'uglify', 'cssmin', 'htmlmin']);
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.registerTask('default', ['sass', 'postcss', 'concat', 'uglify', 'cssmin', 'htmlmin']);
 };
