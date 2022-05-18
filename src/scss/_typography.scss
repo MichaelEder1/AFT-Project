@@ -24,3 +24,35 @@ h1 {
     letter-spacing: 4px;
   }
 }
+
+h2{
+  font-family: 'Alfa Slab One', Veradana, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.sass-title{
+  @extend h2;
+  color: darken($color-sass,25%);
+}
+
+.bootstrap-title{
+  @extend h2;
+  color: darken($color-bootstrap,25%);
+}
+
+.grunt-title{
+  @extend h2;
+  color: darken($color-grunt,25%);
+}
+
+.docker-title{
+  @extend h2;
+  color: darken($color-docker,25%);
+}
+
+.gulp-title{
+  @extend h2;
+  color: darken($color-gulp,25%);
+}
+
