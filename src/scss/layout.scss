@@ -1,0 +1,65 @@
+body {
+  background: $background-color;
+  margin: 0 !important;
+
+  main {
+    section#home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    section.x {
+      height: calc(100vh - #{$header-height} + 1rem);
+    }
+
+    .x.mandatory-scroll-snapping {
+      scroll-snap-type: x mandatory !important;
+      scroll-snap-align: center !important;
+    }
+
+    .sass {
+      background: $color-sass;
+    }
+
+    .bootstrap {
+      background: $color-bootstrap;
+    }
+
+    .docker {
+      background: $color-docker;
+    }
+
+    .gulp {
+      background: $color-gulp;
+    }
+
+    .flex-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      & > div {
+        width: 50%;
+      }
+
+      .image {
+        display: flex;
+        justify-content: center;
+      }
+
+      img {
+        width: 55%;
+        max-height: 62vh;
+      }
+    }
+  }
+}
