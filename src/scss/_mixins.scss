@@ -1,3 +1,13 @@
+@mixin grid($columns, $gap: 1em, $justify: 'center', $align:'center') {
+  .grid-#{$columns} {
+    display: grid;
+    grid-template-columns: repeat(#{$columns}, 1fr);
+    justify-content: #{$justify};
+    align-items: #{$align};
+    grid-gap: #{$gap};
+  }
+}
+
 /* Button https://codepen.io/kathykato/pen/rZRaNe */
 @mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
   transition: $property $duration $ease;
