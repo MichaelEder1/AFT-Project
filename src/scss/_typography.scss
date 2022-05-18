@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+* {
+  font-family: Verdana, sans-serif;
+}
+
+h1 {
+  color: $h1;
+  font-family: 'Alfa Slab One', Veradana, sans-serif;
+  font-size: 8rem;
+  letter-spacing: 10px;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    font-size: 4rem;
+    letter-spacing: 2.5px;
+  }
+  @media screen and (min-width: 992px) and(max-width: 1339px) {
+    font-size: 5rem;
+    letter-spacing: 4px;
+  }
+}
