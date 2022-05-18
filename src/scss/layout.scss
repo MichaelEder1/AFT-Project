@@ -62,4 +62,20 @@ body {
       }
     }
   }
+
+  .btn-sass{
+    @include btn(darken($color-sass,30%), white);
+  }
+  .btn-bootstrap{
+    @include btn(darken($color-bootstrap,30%), white);
+  }
+  .btn-grunt{
+    @include btn(darken($color-grunt,30%), white);
+  }
+  .btn-docker{
+    @include btn(darken($color-docker,30%), white);
+  }
+  .btn-gulp{
+    @include btn(darken($color-gulp,30%), white);
+  }
 }
