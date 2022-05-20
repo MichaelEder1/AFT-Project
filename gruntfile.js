@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                    './public/js/main.min.js': ['./src/js/main.js']
+                    './public/js/main.min.js': './src/js/main.js'
                 }
             }
         },
@@ -66,7 +66,7 @@ module.exports = function (grunt) {
             options: {
                 map: true, // inline sourcemaps
                 processors: [
-                    require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
+                    require('autoprefixer')({overrideBrowserslist: 'last 2 versions'}), // add vendor prefixes
                 ]
             },
             dist: {
