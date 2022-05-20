@@ -1,29 +1,36 @@
 body {
-  background: $background-color;
+  //background: $background-color;
   margin: 0 !important;
 
   main {
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    flex-basis: 50%;
+    max-height: 100vh;
+
     section#home {
-      display: flex;
+      @extend .flex;
       justify-content: center;
       align-items: center;
     }
 
     section {
       padding: 2rem;
+      scroll-snap-align: start !important;
     }
 
     .flex {
-      display: flex;
+      @media screen and (min-width: 992px) {
+        display: flex;
+      }
     }
 
-    section.x {
+    section.y {
       height: calc(100vh - #{$header-height} + 1rem);
     }
 
-    .x.mandatory-scroll-snapping {
-      scroll-snap-type: x mandatory !important;
-      scroll-snap-align: center !important;
+    #home {
+      background: $background-color;
     }
 
     .sass {
@@ -32,6 +39,10 @@ body {
 
     .bootstrap {
       background: $color-bootstrap;
+    }
+
+    .grunt {
+      background: $color-grunt;
     }
 
     .docker {
@@ -43,39 +54,44 @@ body {
     }
 
     .flex-section {
-      display: flex;
+      @extend .flex;
       justify-content: space-around;
       align-items: center;
+      @media screen and (min-width: 992px) {
+        & > div {
+          width: 50%;
+        }
 
-      & > div {
-        width: 50%;
-      }
+        .image {
+          display: flex;
+          justify-content: center;
+        }
 
-      .image {
-        display: flex;
-        justify-content: center;
-      }
-
-      img {
-        width: 55%;
-        max-height: 62vh;
+        img {
+          width: 55%;
+          max-height: 62vh;
+        }
       }
     }
   }
 
-  .btn-sass{
-    @include btn(darken($color-sass,30%), white);
+  .btn-sass {
+    @include btn(darken($color-sass, 30%), white);
   }
-  .btn-bootstrap{
-    @include btn(darken($color-bootstrap,30%), white);
+
+  .btn-bootstrap {
+    @include btn(darken($color-bootstrap, 30%), white);
   }
-  .btn-grunt{
-    @include btn(darken($color-grunt,30%), white);
+
+  .btn-grunt {
+    @include btn(darken($color-grunt, 30%), white);
   }
-  .btn-docker{
-    @include btn(darken($color-docker,30%), white);
+
+  .btn-docker {
+    @include btn(darken($color-docker, 30%), white);
   }
-  .btn-gulp{
-    @include btn(darken($color-gulp,30%), white);
+
+  .btn-gulp {
+    @include btn(darken($color-gulp, 30%), white);
   }
 }
