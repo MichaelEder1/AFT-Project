@@ -28,7 +28,7 @@
     height: auto;
 
     .circle {
-      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      @include transition(all, 0.7s, cubic-bezier(0.65, 0, .076, 1));
       position: relative;
       display: block;
       margin: 0;
@@ -38,7 +38,7 @@
       border-radius: 1.625rem;
 
       .icon {
-        @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+        @include transition(all, 0.7s, cubic-bezier(0.65, 0, .076, 1));
         position: absolute;
         top: 0;
         bottom: 0;
@@ -46,7 +46,7 @@
         background: #FFFFFF;
 
         &.arrow {
-          @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+          @include transition(all, 0.7s, cubic-bezier(0.65, 0, .076, 1));
           left: 0.625rem;
           width: 1.125rem;
           height: 0.125rem;
@@ -68,12 +68,9 @@
     }
 
     .button-text {
-      @include transition(all, 0.45s, cubic-bezier(0.65, 0, .076, 1));
+      @include transition(all, 0.7s, cubic-bezier(0.65, 0, .076, 1));
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      @include position-zero();
       padding: 0.75rem 0;
       margin: 0 0 0 1.85rem;
       color: $background-color-button;
@@ -102,7 +99,21 @@
   }
 }
 
+@mixin position-zero($top:0,$right:0,$bottom:0,$left:0) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin scroll-snap($axis:x, $mode:proximity){
+  scroll-snap-type: $axis $mode;
+  overflow: scroll;
+  flex-basis: 50%;
+  max-height: 100vh;
+}
+
 /* Button https://codepen.io/kathykato/pen/rZRaNe */
-@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+@mixin transition($property: all, $duration: 0.7s, $ease: cubic-bezier(0.65,0,.076,1)) {
   transition: $property $duration $ease;
 }

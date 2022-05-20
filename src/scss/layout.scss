@@ -3,30 +3,25 @@ body {
   margin: 0 !important;
 
   main {
-    scroll-snap-type: y mandatory;
-    overflow: scroll;
-    flex-basis: 50%;
-    max-height: 100vh;
-
-    section#home {
-      @extend .flex;
-      justify-content: center;
-      align-items: center;
-    }
+    @include scroll-snap(y, mandatory);
 
     section {
-      padding: 2rem;
+      padding: 4rem;
       scroll-snap-align: start !important;
+      height: 100vh;
+      text-align: justify;
+
+      &#home {
+        @extend .flex;
+        justify-content: center;
+        align-items: center;
+      }
     }
 
     .flex {
       @media screen and (min-width: 992px) {
         display: flex;
       }
-    }
-
-    section.y {
-      height: calc(100vh - #{$header-height} + 1rem);
     }
 
     #home {

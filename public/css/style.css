@@ -57,39 +57,24 @@ h2, .gulp-title, .docker-title, .grunt-title, .bootstrap-title, .sass-title {
 
 /* button https://codepen.io/kathykato/pen/rZRaNe */
 /* Button https://codepen.io/kathykato/pen/rZRaNe */
-main section * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-main section *::before, main section *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-main section body {
-  font-size: 1rem;
-  line-height: 1.5;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0;
-  min-height: 100vh;
-  background: #FFD59E;
-}
-
 body {
-  background: #FFD59E;
   margin: 0 !important;
 }
+body main {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow: scroll;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  max-height: 100vh;
+}
+body main section {
+  padding: 4rem;
+  scroll-snap-align: start !important;
+  height: 100vh;
+  text-align: justify;
+}
 body main section#home {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -97,27 +82,24 @@ body main section#home {
       -ms-flex-align: center;
           align-items: center;
 }
-body main section {
-  padding: 2rem;
+@media screen and (min-width: 992px) {
+  body main .flex, body main .flex-section, body main section#home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
-body main .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-body main section.x {
-  height: calc(100vh - 5rem + 1rem);
-}
-body main .x.mandatory-scroll-snapping {
-  -ms-scroll-snap-type: x mandatory !important;
-      scroll-snap-type: x mandatory !important;
-  scroll-snap-align: center !important;
+body main #home {
+  background: #FFD59E;
 }
 body main .sass {
   background: #ffadec;
 }
 body main .bootstrap {
   background: #9999ff;
+}
+body main .grunt {
+  background: #ffd19c;
 }
 body main .docker {
   background: #8fc6ff;
@@ -126,29 +108,28 @@ body main .gulp {
   background: #ffa6a6;
 }
 body main .flex-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-body main .flex-section > div {
-  width: 50%;
-}
-body main .flex-section .image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-body main .flex-section img {
-  width: 55%;
-  max-height: 62vh;
+@media screen and (min-width: 992px) {
+  body main .flex-section > div {
+    width: 50%;
+  }
+  body main .flex-section .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body main .flex-section img {
+    width: 55%;
+    max-height: 62vh;
+  }
 }
 body .btn-sass {
   position: relative;
@@ -160,6 +141,7 @@ body .btn-sass {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-top: 0.5rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -168,8 +150,8 @@ body .btn-sass.learn-more {
   height: auto;
 }
 body .btn-sass.learn-more .circle {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
   margin: 0;
@@ -179,8 +161,8 @@ body .btn-sass.learn-more .circle {
   border-radius: 1.625rem;
 }
 body .btn-sass.learn-more .circle .icon {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -188,8 +170,8 @@ body .btn-sass.learn-more .circle .icon {
   background: #FFFFFF;
 }
 body .btn-sass.learn-more .circle .icon.arrow {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -208,13 +190,13 @@ body .btn-sass.learn-more .circle .icon.arrow::before {
           transform: rotate(45deg);
 }
 body .btn-sass.learn-more .button-text {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
   color: #ff14c9;
@@ -244,6 +226,7 @@ body .btn-bootstrap {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-top: 0.5rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -252,8 +235,8 @@ body .btn-bootstrap.learn-more {
   height: auto;
 }
 body .btn-bootstrap.learn-more .circle {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
   margin: 0;
@@ -263,8 +246,8 @@ body .btn-bootstrap.learn-more .circle {
   border-radius: 1.625rem;
 }
 body .btn-bootstrap.learn-more .circle .icon {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -272,8 +255,8 @@ body .btn-bootstrap.learn-more .circle .icon {
   background: #FFFFFF;
 }
 body .btn-bootstrap.learn-more .circle .icon.arrow {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -292,13 +275,13 @@ body .btn-bootstrap.learn-more .circle .icon.arrow::before {
           transform: rotate(45deg);
 }
 body .btn-bootstrap.learn-more .button-text {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
   color: blue;
@@ -328,6 +311,7 @@ body .btn-grunt {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-top: 0.5rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -336,8 +320,8 @@ body .btn-grunt.learn-more {
   height: auto;
 }
 body .btn-grunt.learn-more .circle {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
   margin: 0;
@@ -347,8 +331,8 @@ body .btn-grunt.learn-more .circle {
   border-radius: 1.625rem;
 }
 body .btn-grunt.learn-more .circle .icon {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -356,8 +340,8 @@ body .btn-grunt.learn-more .circle .icon {
   background: #FFFFFF;
 }
 body .btn-grunt.learn-more .circle .icon.arrow {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -376,13 +360,13 @@ body .btn-grunt.learn-more .circle .icon.arrow::before {
           transform: rotate(45deg);
 }
 body .btn-grunt.learn-more .button-text {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
   color: #ff8a03;
@@ -412,6 +396,7 @@ body .btn-docker {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-top: 0.5rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -420,8 +405,8 @@ body .btn-docker.learn-more {
   height: auto;
 }
 body .btn-docker.learn-more .circle {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
   margin: 0;
@@ -431,8 +416,8 @@ body .btn-docker.learn-more .circle {
   border-radius: 1.625rem;
 }
 body .btn-docker.learn-more .circle .icon {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -440,8 +425,8 @@ body .btn-docker.learn-more .circle .icon {
   background: #FFFFFF;
 }
 body .btn-docker.learn-more .circle .icon.arrow {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -460,13 +445,13 @@ body .btn-docker.learn-more .circle .icon.arrow::before {
           transform: rotate(45deg);
 }
 body .btn-docker.learn-more .button-text {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
   color: #0078f5;
@@ -496,6 +481,7 @@ body .btn-gulp {
   text-decoration: none;
   background: transparent;
   padding: 0;
+  margin-top: 0.5rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -504,8 +490,8 @@ body .btn-gulp.learn-more {
   height: auto;
 }
 body .btn-gulp.learn-more .circle {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
   margin: 0;
@@ -515,8 +501,8 @@ body .btn-gulp.learn-more .circle {
   border-radius: 1.625rem;
 }
 body .btn-gulp.learn-more .circle .icon {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -524,8 +510,8 @@ body .btn-gulp.learn-more .circle .icon {
   background: #FFFFFF;
 }
 body .btn-gulp.learn-more .circle .icon.arrow {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   left: 0.625rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -544,13 +530,13 @@ body .btn-gulp.learn-more .circle .icon.arrow::before {
           transform: rotate(45deg);
 }
 body .btn-gulp.learn-more .button-text {
-  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.7s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
   color: #ff0d0d;
@@ -569,10 +555,6 @@ body .btn-gulp:hover .circle .icon.arrow {
 }
 body .btn-gulp:hover .button-text {
   color: #FFFFFF;
-}
-
-header {
-  height: 5rem;
 }
 
 nav .toggle {
@@ -599,6 +581,10 @@ nav .menu {
   z-index: 1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+nav .menu.active {
+  left: 0;
+  overflow: auto;
 }
 nav ul {
   margin: 0;
@@ -639,10 +625,6 @@ nav ul li a.docker:hover {
 }
 nav ul li a.gulp:hover {
   background: #ffa6a6;
-}
-nav .menu.active {
-  left: 0;
-  overflow: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
